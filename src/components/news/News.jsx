@@ -1,4 +1,3 @@
-import { func } from 'prop-types';
 import React, { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom'
 
@@ -42,6 +41,7 @@ export function News({ href, n, id, child }) {
                   </div>
                 )
               }
+              return null;
             })
           }
 

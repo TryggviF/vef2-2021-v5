@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 import { News } from '../news/News.jsx'
 const apiUrl = process.env.REACT_APP_API_URL;
 
