@@ -1,6 +1,6 @@
 {
-    "root": "/",
+    "root": "build/",
     "routes": {
-      "/**": "index.js"
+      "/": "index.js"
     }
   }
