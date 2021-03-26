@@ -22,6 +22,7 @@ export function NewsList() {
         setData(data);
         setLoading(false);
       } catch (e) {
+        console.log("villa við að sækja", apiUrl)
         setError(e);
       }
    } fetchNews();
@@ -30,20 +31,22 @@ export function NewsList() {
 
   return (
     <div>
-      { (loading || !data) ?(
+      { (loading) ?(
         <div>Hleður gögn...</div>
-      ) :(
+      ) : (!error && data) ? (
       <div class="news_container">
         {
           data.map((data, i) => {
             return (
-              <div class="news_category">             
-                <News href={data.url} n={5} id={data.id} child={true} />
+              <div class="news_category" key={i}>             
+                <News key={i} href={data.url} n={5} id={data.id} child={true} />
               </div>
             )
         })
         }
       </div>
+      ) : (
+        <p>Villa við að sækja gögn!</p>
       )
     }
     </div>
