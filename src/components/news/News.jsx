@@ -1,16 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 export function News({ href, n, id, child }) {
   // TODO sækja fréttir fyrir flokk
-  const history = useHistory();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
-  function handleClick(){
-    history.push('/');
-  }
+
   useEffect(() => {
     async function fetchNews() {
       try {
@@ -47,10 +44,10 @@ export function News({ href, n, id, child }) {
 
           { child ? (
             // <a href={id} class="guide">Allar Fréttir</a>
-            <Link to={id} replace class="guide" onClick={handleClick}>Allar fréttir</Link>
+            <Link to={id}class="guide">Allar fréttir</Link>
           ) : (
             // <a href="../" class="guide"> Til Baka</a>
-            <Link to="../" replace class="guide">Til Baka</Link>
+            <Link to="../" class="guide">Til Baka</Link>
           )}
 
         </div>
