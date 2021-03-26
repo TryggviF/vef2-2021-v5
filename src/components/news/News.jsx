@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 
-const apiUrl = process.env.REACT_APP_API_URL;
 
 export function News({ href, n, id, child}) {
   // TODO sækja fréttir fyrir flokk
@@ -21,29 +20,32 @@ export function News({ href, n, id, child}) {
   }, [href] )
   return (
     <div>
-      { (loading || !data) ?(
-        <div class = "news_container">Hleður gögn...</div>
+      { (loading || !data) ? (
+        <div class = "news_items">Hleður gögn...</div>
       ) : (
-      <div class="news_container">
-        
-        <p>{data.title}</p>
+      <div class="news_items">
+        {!error ? (<p>Engin villa!</p>) 
+        : (<p>Villa við að sækja gögn!</p>)}
+        <h2>{data.title}</h2>
+
         {
           data.items.map((data, i) => {
             if (n > i){
-              console.log(data.title, 'i is', i);
-            return (
-              <div class="news_category">             
-                <p>{data.title}</p>
-              </div>
-            )
-          }
-        })
+              return (
+                <div class="news_item">             
+                  <a href={data.link}>{data.title}</a>
+                </div>
+              )
+            }
+          })
         }
-        {child ? (
-          <a href={id}>Allar Fréttir</a>
+
+        { child ? (
+          <a href={id} class="guide">Allar Fréttir</a>
         ) : (
-          <a href="../"> Til Baka</a>
+          <a href="../" class="guide"> Til Baka</a>
         )}
+
         <hr/>
       </div>
       )

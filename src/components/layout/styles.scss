@@ -1,0 +1,57 @@
+.news{
+    &_container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    &_category{
+        display: flex;
+        width: 30%;
+        margin: 0.25rem;
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
+        border: 1px solid black;
+        border-radius: 1%;
+        background-color:cornsilk;
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &_item{
+        margin-bottom: 0.25rem;
+    }
+    &_items{
+        a{
+            color: black;
+        }
+    }
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    a {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        margin-left: 0.25rem;
+    }
+}
+
+h1 {
+    margin-left: 0.25rem;
+}
+
+.guide {
+    margin-top: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+footer{
+    margin-left: 0.25rem;
+}

@@ -5,10 +5,12 @@ import './styles.scss';
 export function Layout({ children }) {
   // TODO setja upp layout fyrir vef
   return (
-    <div>
-      <header>FOO</header>
+    <div class="layout">
+      <h1>RÚV fréttir</h1>
       {React.Children.map(children, child => child)}
-      <footer>BAR</footer>
+      <footer>
+        <p>Fréttir frá</p><a href="http://www.ruv.is">RÚV</a>
+      </footer>
     </div>
   )
 }
