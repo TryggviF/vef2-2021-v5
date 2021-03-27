@@ -17,7 +17,7 @@ export function News({ href, n, id, child }) {
         setLoading(false);
       } catch (e) {
         setError(true);
-        console.log("Það kom villa við að sækja ", href, "!")
+        console.info("Það kom villa við að sækja ", href, "!")
       }
     } fetchNews();
   }, [href])

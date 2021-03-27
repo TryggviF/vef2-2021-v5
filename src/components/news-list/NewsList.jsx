@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { News } from '../news/News.jsx'
-const apiUrl = process.env.REACT_APP_API_URL;
+const apiUrl = process.env.REACT_APP_API_URL ?? 'https://vef2-2021-ruv-rss-json-proxy.herokuapp.com/';
 
 // NewsList.propTypes = {
 //   type: PropTypes.string.isRequired,
@@ -21,7 +21,7 @@ export function NewsList() {
         setData(data);
         setLoading(false);
       } catch (e) {
-        console.log("villa við að sækja", apiUrl)
+        console.info("villa við að sækja", apiUrl)
         setError(e);
       }
    } fetchNews();
